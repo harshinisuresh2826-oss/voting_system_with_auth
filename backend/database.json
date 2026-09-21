@@ -1,0 +1,79 @@
+{
+  "candidates": [
+    {
+      "id": "cand-1",
+      "name": "Sarah Jenkins",
+      "party": "Tech & Innovation Party",
+      "role": "Chief Tech Officer & Digital Reformer",
+      "manifesto": "Empowering youth through AI education, open governance, and tech infrastructure.",
+      "avatar": "assets/candidate_1.png",
+      "votes": 0
+    },
+    {
+      "id": "cand-2",
+      "name": "Alex Rivera",
+      "party": "Youth & Future Alliance",
+      "role": "Community Advocate & Environmentalist",
+      "manifesto": "Sustainable smart cities, green energy investment, and youth empowerment initiatives.",
+      "avatar": "assets/candidate_2.png",
+      "votes": 0
+    },
+    {
+      "id": "cand-3",
+      "name": "Dr. Elena Rostova",
+      "party": "Sustainable Growth Movement",
+      "role": "Economic Strategist & Healthcare Leader",
+      "manifesto": "Universal healthcare modernization, balanced economic reform, and public transparency.",
+      "avatar": "assets/candidate_3.png",
+      "votes": 1
+    }
+  ],
+  "users": [
+    {
+      "id": "usr-admin",
+      "username": "admin",
+      "passwordHash": "$2a$10$w3U6U3L1wYpE8fC6nN5S2.H8mU9v9Z5v9v9v9v9v9v9v9v9v9v9v9",
+      "role": "admin",
+      "hasVoted": true,
+      "votedCandidateId": "cand-3",
+      "createdAt": "2026-08-01T10:00:00.000Z"
+    },
+    {
+      "id": "usr-1786463421637-7",
+      "username": "indhu",
+      "passwordHash": "$2a$10$2ga7WC.r3TicVpfacGQEOulwzVnsMaAbfvQXREgqivunr0brNey6a",
+      "role": "voter",
+      "hasVoted": false,
+      "votedCandidateId": null,
+      "createdAt": "2026-08-11T15:50:21.637Z"
+    },
+    {
+      "id": "usr-1786468500763-263",
+      "username": "harsh",
+      "passwordHash": "$2a$10$Q3VG1TcBaaiXjy9fGyTDn.F6PLVTrFW/tdfkVnF2DSRxfQhng0e.W",
+      "role": "voter",
+      "hasVoted": false,
+      "votedCandidateId": null,
+      "createdAt": "2026-08-11T17:15:00.763Z"
+    },
+    {
+      "id": "usr-1786468940983-263",
+      "username": "muthu",
+      "passwordHash": "$2a$10$VkwX7D8CR0IsYjydaxLqmum3np4OtR3wS2zq9wUHP/TneB8..Rbh6",
+      "role": "voter",
+      "hasVoted": false,
+      "votedCandidateId": null,
+      "createdAt": "2026-08-11T17:22:20.983Z"
+    }
+  ],
+  "votes": [
+    {
+      "id": "vote-1786465890604",
+      "userId": "usr-admin",
+      "username": "admin",
+      "candidateId": "cand-3",
+      "candidateName": "Dr. Elena Rostova",
+      "timestamp": "2026-08-11T16:31:30.604Z"
+    }
+  ]
+}

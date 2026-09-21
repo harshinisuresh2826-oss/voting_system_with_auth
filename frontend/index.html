@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VotePulse — Cyber Democratic Platform 2026</title>
+  <meta name="description" content="Next-Generation Cyber-Aesthetic Full-Stack Online Voting System with Real-Time Blockchain-Inspired Security.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Dynamic Cyber Grid Mesh Backdrop -->
+  <div class="cyber-grid-backdrop"></div>
+
+  <!-- Animated Glowing Nebula Orbs -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+  <div class="ambient-glow glow-4"></div>
+
+  <!-- Toast Notification Portal -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Feature Detail Modal Portal -->
+  <div id="feature-modal" class="modal-overlay hidden" onclick="app.closeModal(event)">
+    <div class="modal-card glass-panel-3d">
+      <button class="modal-close-btn" onclick="app.closeModalDirect()">&times;</button>
+      <div class="modal-icon" id="modal-icon">✨</div>
+      <h3 id="modal-title">Feature Title</h3>
+      <p id="modal-desc">Feature detailed breakdown description goes here...</p>
+      <div class="modal-footer">
+        <button class="btn btn-cyber-primary btn-block" onclick="app.closeModalDirect()">Got it ✓</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cyber Navigation Bar -->
+  <header class="cyber-nav" id="main-header">
+    <div class="nav-container">
+      <div class="brand-group" onclick="app.navigateTo('home')">
+        <div class="brand-logo">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg>
+        </div>
+        <div class="brand-title">VOTE<span class="neon-text">PULSE</span></div>
+        <div class="status-pill-live" onclick="app.showToast('Election Node #1 Active — 100% Operational', 'success')">
+          <span class="pulse-beacon"></span> ELECTION COMMAND 2026
+        </div>
+      </div>
+
+      <nav class="nav-menu">
+        <a href="#home" class="nav-item active" onclick="app.navigateTo('home')">Overview Dashboard</a>
+        <a href="#vote" class="nav-item" id="nav-vote-link" onclick="app.navigateTo('vote')">Digital Ballot</a>
+      </nav>
+
+      <div class="nav-actions" id="nav-auth-buttons">
+        <button class="btn btn-cyber-ghost" onclick="app.navigateTo('login')">Sign In</button>
+        <button class="btn btn-cyber-primary" onclick="app.navigateTo('register')">Get Started</button>
+      </div>
+
+      <!-- DYNAMIC USER PROFILE WITH GENDER AVATAR -->
+      <div class="user-profile-badge hidden" id="nav-user-profile">
+        <div class="avatar-ring-container">
+          <img src="" id="user-gender-avatar" alt="Avatar" class="profile-gender-avatar">
+        </div>
+        <div class="user-meta">
+          <span class="user-name" id="user-name-display">Voter</span>
+          <span class="role-chip" id="user-role-badge">Voter</span>
+        </div>
+        <button class="btn-icon-logout" onclick="app.logout()" title="Logout">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Viewport -->
+  <main class="cyber-viewport">
+
+    <!-- 1. REAL-TIME AUTOMATIC METRIC DASHBOARD -->
+    <section id="home-view" class="view-screen active">
+      <div class="dashboard-overview-container">
+        
+        <!-- DASHBOARD HERO BANNER -->
+        <div class="dash-hero-banner glass-panel-3d">
+          <div class="hero-header-meta">
+            <span class="cyber-badge-glow">✨ NEURAL DEMOCRACY PROTOCOL 3.0</span>
+            <div class="countdown-widget">
+              <span class="timer-label">ELECTION STATUS:</span>
+              <span class="timer-value" id="dash-timer">LIVE VOTING ACTIVE</span>
+            </div>
+          </div>
+          
+          <h1 class="dash-hero-title">
+            Real-Time Election <span class="hologram-text">Command Dashboard</span>
+          </h1>
+
+          <p class="dash-hero-subtitle">
+            All votes & registered voter tallies automatically increment in real time when you log in or vote!
+          </p>
+
+          <!-- 4 LIVE AUTOMATIC OVERVIEW METRIC TILES -->
+          <div class="overview-stats-grid">
+            <div class="stat-card clickable-card" onclick="app.showToast('Total votes increment automatically on vote submit', 'info')">
+              <div class="stat-icon-wrap icon-cyan">🗳️</div>
+              <div class="stat-info">
+                <span class="stat-title">Total Votes Cast</span>
+                <span class="stat-number" id="overview-stat-votes">45</span>
+              </div>
+            </div>
+
+            <div class="stat-card clickable-card" onclick="app.showToast('Registered voters increment automatically on login', 'success')">
+              <div class="stat-icon-wrap icon-emerald">👥</div>
+              <div class="stat-info">
+                <span class="stat-title">Registered Voters</span>
+                <span class="stat-number" id="overview-stat-voters">28</span>
+              </div>
+            </div>
+
+            <div class="stat-card clickable-card" onclick="app.showToast('Real-time Vote Leaderboard', 'info')">
+              <div class="stat-icon-wrap icon-purple">🏆</div>
+              <div class="stat-info">
+                <span class="stat-title">Leading Candidate</span>
+                <span class="stat-text" id="overview-stat-leader">Alex Rivera</span>
+              </div>
+            </div>
+
+            <div class="stat-card clickable-card" onclick="app.showToast('SHA-256 Security Node Active', 'success')">
+              <div class="stat-icon-wrap icon-gold">⚡</div>
+              <div class="stat-info">
+                <span class="stat-title">Security Node</span>
+                <span class="stat-text text-emerald">100% OPERATIONAL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TWO COLUMN DASHBOARD BODY -->
+        <div class="dashboard-body-grid">
+          
+          <!-- LEFT COLUMN: LIVE CANDIDATE RACE TRACKER WITH HD AVATARS -->
+          <div class="dash-panel glass-panel-3d">
+            <div class="panel-top-row">
+              <h3>🗳️ Live Candidate Race Overview</h3>
+              <button class="btn btn-cyber-primary btn-sm" onclick="app.navigateTo('vote')">Vote Now →</button>
+            </div>
+            
+            <div class="candidate-race-list" id="overview-candidate-list">
+              <!-- Dynamically populated candidate vote bars with HD avatars -->
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: QUICK ACTION HUB & AUDIT STREAM -->
+          <div class="dash-side-column">
+            
+            <!-- Quick Actions Card -->
+            <div class="dash-panel glass-panel-3d">
+              <h3>⚡ Quick Navigation Hub</h3>
+              <div class="quick-nav-grid mt-3">
+                <button class="quick-action-tile" onclick="app.navigateTo('vote')">
+                  <span class="tile-emoji">🗳️</span>
+                  <div class="tile-texts">
+                    <strong>Enter Digital Ballot</strong>
+                    <span>Cast your vote with candidate photos</span>
+                  </div>
+                  <span class="tile-arrow">→</span>
+                </button>
+
+                <button class="quick-action-tile" onclick="app.navigateTo('register')">
+                  <span class="tile-emoji">👤</span>
+                  <div class="tile-texts">
+                    <strong>Voter Registration</strong>
+                    <span>Create your voter profile</span>
+                  </div>
+                  <span class="tile-arrow">→</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Audit Feed Terminal Block -->
+            <div class="dash-panel glass-panel-3d">
+              <div class="panel-top-row">
+                <h3>📜 Audit Stream Feed</h3>
+                <span class="live-dot-pulse">LIVE</span>
+              </div>
+              <div class="terminal-audit-box" id="overview-audit-terminal">
+                <div class="term-line"><span class="term-time">[SYS]</span> Cryptographic node initialized</div>
+                <div class="term-line"><span class="term-time">[REST]</span> Express server connected at http://localhost:5000</div>
+                <div class="term-line"><span class="term-hash">[HASH]</span> SHA-256 verified voter logs stream active</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 2. REGISTER SCREEN -->
+    <section id="register-view" class="view-screen hidden">
+      <div class="auth-center-wrapper">
+        <div class="cyber-card glass-panel-3d with-banner">
+          
+          <!-- Back Button -->
+          <div class="back-btn-row">
+            <button class="btn btn-cyber-ghost btn-sm" onclick="app.goBack('home')">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+              Back to Overview
+            </button>
+          </div>
+
+          <div class="card-header-icon icon-cyan">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6M23 11h-6"/></svg>
+          </div>
+          <h2>Create Voter Account</h2>
+          <p class="card-subtitle">Registering automatically increments the Registered Voters metric!</p>
+
+          <form id="form-register" onsubmit="app.handleRegister(event)">
+            <div class="input-group">
+              <label>Voter Username (Type ANY Name e.g. nithi, Priya, Rahul)</label>
+              <div class="cyber-input-wrapper">
+                <span class="field-icon">@</span>
+                <input type="text" id="reg-username" class="cyber-input" placeholder="Type your name here..." required minlength="3">
+              </div>
+            </div>
+
+            <div class="input-group">
+              <label>Password</label>
+              <div class="cyber-input-wrapper">
+                <span class="field-icon">🔑</span>
+                <input type="password" id="reg-password" class="cyber-input" placeholder="Enter any password" required minlength="4">
+              </div>
+            </div>
+
+            <div class="input-group">
+              <label>Confirm Password</label>
+              <div class="cyber-input-wrapper">
+                <span class="field-icon">🔒</span>
+                <input type="password" id="reg-confirm-password" class="cyber-input" placeholder="Confirm password" required minlength="4">
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-cyber-primary btn-block btn-lg mt-4" id="btn-submit-register">
+              Create Voter Profile →
+            </button>
+          </form>
+
+          <div class="card-footer-link">
+            Already registered? <a href="#login" onclick="app.navigateTo('login')">Sign in here</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. LOGIN SCREEN -->
+    <section id="login-view" class="view-screen hidden">
+      <div class="auth-center-wrapper">
+        <div class="cyber-card glass-panel-3d with-banner">
+
+          <!-- Back Button -->
+          <div class="back-btn-row">
+            <button class="btn btn-cyber-ghost btn-sm" onclick="app.goBack('home')">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+              Back to Overview
+            </button>
+          </div>
+
+          <div class="card-header-icon icon-purple">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          </div>
+          <h2>Voter Sign In</h2>
+          <p class="card-subtitle">Signing in with a new name automatically increments Registered Voters (+1)!</p>
+
+          <div class="open-access-banner">
+            ✨ <strong>AUTOMATIC REAL-TIME SYNC:</strong> Type ANY name (e.g. nithi, Rahul, Divya) to auto-increment voters!
+          </div>
+
+          <!-- Quick Fill Suggestions -->
+          <div class="quick-demo-container mt-3">
+            <div class="demo-label">💡 QUICK FILL SUGGESTIONS</div>
+            <div class="demo-buttons">
+              <button class="btn-demo-chip voter-chip" onclick="app.fillDemo('nithi', 'voter123')">
+                <span class="chip-role">VOTER</span> nithi 👧
+              </button>
+              <button class="btn-demo-chip voter-chip" onclick="app.fillDemo('Priya_Voter', 'voter123')">
+                <span class="chip-role">GIRL VOTER</span> Priya_Voter 👧
+              </button>
+              <button class="btn-demo-chip voter-chip" onclick="app.fillDemo('Alex_Voter', 'voter123')">
+                <span class="chip-role">BOY VOTER</span> Alex_Voter 👦
+              </button>
+            </div>
+          </div>
+
+          <form id="form-login" onsubmit="app.handleLogin(event)">
+            <div class="input-group">
+              <label>Enter Your Username (e.g. nithi)</label>
+              <div class="cyber-input-wrapper">
+                <span class="field-icon">@</span>
+                <input type="text" id="login-username" class="cyber-input" placeholder="Type name (e.g. nithi)" required>
+              </div>
+            </div>
+
+            <div class="input-group">
+              <label>Password</label>
+              <div class="cyber-input-wrapper">
+                <span class="field-icon">🔑</span>
+                <input type="password" id="login-password" class="cyber-input" placeholder="Enter password" required>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-cyber-primary btn-block btn-lg mt-4" id="btn-submit-login">
+              Authenticate & Launch →
+            </button>
+          </form>
+
+          <div class="card-footer-link">
+            Need a new account? <a href="#register" onclick="app.navigateTo('register')">Register here</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. DIGITAL BALLOT PAGE -->
+    <section id="vote-view" class="view-screen hidden">
+      <div class="ballot-container">
+        
+        <!-- STEPPER HEADER -->
+        <div class="stepper-bar">
+          <div class="step-node active" id="step-node-1" onclick="app.goToWizardStep(1)">
+            <div class="node-circle">01</div>
+            <span class="node-label">Choose Candidate</span>
+          </div>
+          <div class="step-connector" id="step-line-1"></div>
+          <div class="step-node" id="step-node-2">
+            <div class="node-circle">02</div>
+            <span class="node-label">Confirmation & Vote</span>
+          </div>
+          <div class="step-connector" id="step-line-2"></div>
+          <div class="step-node" id="step-node-3">
+            <div class="node-circle">03</div>
+            <span class="node-label">Thank You</span>
+          </div>
+        </div>
+
+        <!-- Already Voted Banner -->
+        <div id="already-voted-banner" class="alert-glass alert-warning hidden">
+          <div class="alert-icon">⚠️</div>
+          <div class="alert-body">
+            <h4>Ballot Already Cast!</h4>
+            <p>Our database confirms your vote has been securely recorded. Duplicate votes are restricted.</p>
+            <button class="btn btn-sm btn-cyber-glass mt-2" onclick="app.navigateTo('success')">View Official Thank You Receipt →</button>
+          </div>
+        </div>
+
+        <!-- STEP 1: CANDIDATE SELECTION WITH HD PHOTOS -->
+        <div id="wizard-page-1" class="wizard-page active">
+          <div class="page-title-row">
+            <div>
+              <button class="btn btn-cyber-ghost btn-sm mb-2" onclick="app.goBack('home')">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Back to Home
+              </button>
+              <br>
+              <span class="neon-pill">OFFICIAL DIGITAL BALLOT</span>
+              <h2 class="title-text">Select Candidate Photo To Vote</h2>
+            </div>
+            <div class="status-badge-voter" id="voter-status-badge">
+              <span class="live-dot"></span> Eligible Voter
+            </div>
+          </div>
+
+          <div class="candidates-flex-grid" id="candidates-container">
+            <!-- Dynamically populated candidate cards with guaranteed HD photos -->
+          </div>
+        </div>
+
+        <!-- STEP 2: CONFIRMATION STEP -->
+        <div id="wizard-page-2" class="wizard-page hidden">
+          <div class="page-title-row">
+            <div>
+              <button class="btn btn-cyber-ghost btn-sm mb-2" onclick="app.goToWizardStep(1)">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                ← Change Candidate Choice
+              </button>
+              <br>
+              <span class="neon-pill">STEP 2 OF 2 — FINAL CONFIRMATION</span>
+              <h2 class="title-text">Confirm Your Vote Choice</h2>
+            </div>
+          </div>
+
+          <div class="review-ticket-container">
+            <div class="hologram-ticket glass-panel-3d">
+              <div class="ticket-header">
+                <span>CONFIDENTIAL BALLOT REVIEW</span>
+                <span class="ticket-badge">VALIDATED SELECTION</span>
+              </div>
+              
+              <div class="ticket-body">
+                <img src="" id="review-candidate-img" alt="Candidate Photo" class="ticket-avatar">
+                <div class="ticket-meta">
+                  <h3 id="review-candidate-name">Candidate Name</h3>
+                  <span class="ticket-party" id="review-candidate-party">Party Alliance</span>
+                  <span class="ticket-role" id="review-candidate-role">Role</span>
+                  <div class="ticket-quote" id="review-candidate-manifesto">"Manifesto quote..."</div>
+                </div>
+              </div>
+
+              <div class="confirmation-action-box">
+                <p class="confirm-warning-text">
+                  ⚠️ Click <strong>Confirm & Cast Official Vote</strong> to increment Total Votes Cast (+1) and complete your ballot!
+                </p>
+                <div class="confirm-buttons-row">
+                  <button class="btn btn-cyber-glass btn-lg" onclick="app.goToWizardStep(1)">
+                    ← Back to Candidates
+                  </button>
+                  <button class="btn btn-cyber-emerald btn-xl shadow-emerald" id="btn-cast-vote" onclick="app.handleCastVote()">
+                    Confirm & Cast Official Vote ✓
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. DEDICATED THANK YOU PAGE WITH VOTED CANDIDATE PHOTO & SHA-256 RECEIPT -->
+    <section id="success-view" class="view-screen hidden">
+      <div class="auth-center-wrapper">
+        <div class="cyber-card glass-panel-3d text-center success-card-wide">
+
+          <!-- Back Button -->
+          <div class="back-btn-row">
+            <button class="btn btn-cyber-ghost btn-sm" onclick="app.goBack('home')">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+              Back to Overview
+            </button>
+          </div>
+
+          <div class="success-burst-icon">
+            <svg viewBox="0 0 24 24" width="56" height="56" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+
+          <h2 class="thankyou-title">THANK YOU FOR VOTING! 🙏🎉</h2>
+          <p class="card-subtitle">Your vote has been officially cast and recorded in the real-time system database!</p>
+
+          <!-- VOTED CANDIDATE FEATURE CARD WITH PHOTO -->
+          <div class="voted-candidate-showcase-card">
+            <div class="voted-avatar-box">
+              <img src="" id="success-candidate-img" alt="Voted Candidate Photo" class="voted-candidate-photo">
+              <span class="voted-verified-badge">✓ Voted Choice</span>
+            </div>
+            <div class="voted-candidate-info">
+              <h3 id="success-candidate-name">Candidate Name</h3>
+              <span class="voted-party-tag" id="success-candidate-party">Party Alliance</span>
+              <p class="voted-role-text" id="success-candidate-role">Role</p>
+              <div class="voted-count-pill" id="success-candidate-votes">Total Candidate Votes: 1</div>
+            </div>
+          </div>
+
+          <div class="receipt-hologram-card">
+            <div class="receipt-top-row">
+              <span>OFFICIAL DIGITAL VOTING RECEIPT</span>
+              <button class="btn-copy-hash" onclick="app.copyReceiptHash()">📋 Copy Hash</button>
+              <span class="status-green">VERIFIED ✓</span>
+            </div>
+            <div class="receipt-line"></div>
+            <div class="receipt-detail">
+              <span class="label">Voter Account:</span>
+              <span class="value" id="receipt-voter-name">--</span>
+            </div>
+            <div class="receipt-detail">
+              <span class="label">Candidate Choice:</span>
+              <span class="value highlight-emerald" id="receipt-candidate-name">--</span>
+            </div>
+            <div class="receipt-detail">
+              <span class="label">Party Alliance:</span>
+              <span class="value" id="receipt-party-name">--</span>
+            </div>
+            <div class="receipt-detail">
+              <span class="label">SHA-256 Cryptographic Hash:</span>
+              <span class="value code-cyan" id="receipt-hash">0x8F9...2A1</span>
+            </div>
+            <div class="receipt-detail">
+              <span class="label">Timestamp:</span>
+              <span class="value" id="receipt-time">--</span>
+            </div>
+          </div>
+
+          <div class="thankyou-banner-box mt-3">
+            🙏 Thank you for exercising your digital democratic right in VotePulse 2026!
+          </div>
+
+          <div class="receipt-buttons mt-4">
+            <button class="btn btn-cyber-primary btn-lg" onclick="app.navigateTo('home')">
+              Return to Overview Dashboard →
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="cyber-footer">
+    <p>© 2026 VotePulse Cyber Democratic Platform. Node.js + Express Backend REST API.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
