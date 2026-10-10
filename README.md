@@ -82,3 +82,4 @@ You can launch the frontend application in any of the following ways:
 - **Duplicate Vote Prevention**: Permanently locks voting once a user submits a vote.
 - **Password Hashing**: Passwords stored securely using `bcryptjs`.
 - **JWT Authorization**: Bearer token authentication for protected vote & admin routes.
+# voting_system_with_auth
