@@ -1,85 +1,61 @@
-# 🗳️ VotePulse - Full-Stack Online Voting System
+# 🗳️ VotePulse – Online Voting System
 
-VotePulse is a complete, modern Full-Stack Online Voting System featuring a **Node.js + Express REST API Backend** with persistent storage, and an interactive **Single Page Application (SPA) Frontend** designed with glassmorphism UI, real-time analytics, and tamper-proof voting logic.
+A modern online voting system designed to provide a simple and user-friendly digital voting experience. This project includes a frontend interface and a backend API for managing users, candidates, and votes.
 
----
+## ✨ Features
+
+- 🔐 User authentication
+- 👤 User and admin functionality
+- 🗳️ Online voting
+- 📋 Candidate management
+- 📊 Voting results and analytics
+- 🎨 Modern and responsive user interface
+
+## 🛠️ Technologies Used
+
+- **Frontend:** HTML, CSS, JavaScript
+- **Backend:** Node.js, Express.js
+- **API:** REST API
+- **Data Storage:** JSON-based storage
+- **Additional Tools:** Flutter / Dart (project includes `pubspec.yaml`)
 
 ## 📁 Project Structure
 
-```
-voting-system/
+```text
+voting_system_with_auth/
 ├── backend/
-│   ├── server.js          # Express REST API server (Auth, Candidates, Voting, Admin APIs)
-│   ├── database.json      # Persistent file-backed DB store (Users, Candidates, Votes)
-│   └── package.json       # Backend dependencies (express, cors, body-parser, bcryptjs, jsonwebtoken)
 ├── frontend/
-│   ├── index.html         # HTML5 layout containing 6 modular SPA screens
-│   ├── style.css          # Glassmorphism design system, dark mode CSS, animations
-│   ├── app.js             # SPA client router, API service, state management & DOM renderer
-│   └── assets/            # High-aesthetic candidate avatars and hero ballot graphics
-└── README.md              # Setup & Execution Guide
+├── lib/
+├── web/
+├── README.md
+├── package-lock.json
+└── pubspec.yaml
 ```
 
----
+## 🚀 Getting Started
 
-## ⚡ Quick Start & Setup Guide
+1. Clone this repository:
 
-### 1. Start the Express Backend Server
+   ```bash
+   git clone https://github.com/harshinisuresh2826-oss/voting_system_with_auth.git
+   ```
 
-Open your terminal in VS Code:
+2. Open the project folder in VS Code.
 
-```bash
-cd backend
-npm install
-npm start
-```
+3. Install the required dependencies based on the backend and frontend configuration.
 
-The Express API server will start on **`http://localhost:5000`**.
+4. Follow the setup instructions for each component to run the application locally.
 
-### 2. Launch the Frontend Application
+## 🎯 Project Objective
 
-You can launch the frontend application in any of the following ways:
-- **Directly**: Open [`frontend/index.html`](file:///c:/online%20voting/frontend/index.html) in your browser.
-- **VS Code Live Server**: Right-click `frontend/index.html` and click **"Open with Live Server"**.
+The objective of this project is to explore digital voting workflows, user authentication, candidate management, and vote result presentation through a user-friendly application.
 
----
+## 👩‍💻 Author
 
-## 🔑 Demo Account Credentials
+**Harshini S**
 
-| Account Role | Username | Password | Access Rights |
-| :--- | :--- | :--- | :--- |
-| **System Admin** | `admin` | `admin123` | Full Admin Dashboard, Live Results, Vote Reset |
-| **Demo Voter** | `demovoter1` | `voter123` | Cast vote on official ballot, view vote receipt |
-| **New User** | *Any registered user* | *Created password* | Registered voter account |
+GitHub: [harshinisuresh2826-oss](https://github.com/harshinisuresh2826-oss)
 
 ---
 
-## 🖥️ UI Screens Included
-
-1. **Home Screen (`#home`)**: Hero title, voting features, ballot graphic, quick navigation.
-2. **Register Screen (`#register`)**: Form with password validation and account creation.
-3. **Login Screen (`#login`)**: Authentication with quick demo fill shortcuts.
-4. **Choose Candidate Screen (`#vote`)**: Protected voter interface, candidate cards, platform manifestos, radio card checkmark selection.
-5. **Vote Success Screen (`#success`)**: Green checkmark confirmation, cryptographic vote receipt hash, and timestamp.
-6. **Admin Dashboard (`#admin`)**: Dark blue sidebar, live KPIs (Total Voters, Total Votes, Winner), candidate tally progress bars, and recent audit logs table.
-
----
-
-## 🌐 REST API Endpoints
-
-- `POST /api/register` — Register a new voter account
-- `POST /api/login` — Authenticate user or admin & receive session token
-- `GET /api/candidates` — Fetch active candidates list and metadata
-- `POST /api/vote` — Submit vote for candidate ID (validates token & duplicate prevention)
-- `GET /api/user/status` — Returns current user's voting status
-- `GET /api/admin/dashboard` — Fetch live admin statistics & election tallies
-- `POST /api/admin/reset` — Reset election data for re-testing
-
----
-
-## 🛡️ Security & Integrity Features
-
-- **Duplicate Vote Prevention**: Permanently locks voting once a user submits a vote.
-- **Password Hashing**: Passwords stored securely using `bcryptjs`.
-- **JWT Authorization**: Bearer token authentication for protected vote & admin routes.
-# voting_system_with_auth
+*Developed as a project to learn and demonstrate application development concepts.*
